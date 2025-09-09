@@ -6,7 +6,7 @@ const HisotryComponent = ({
   selectedCheck,
   handleSelectHistoryCheck,
 }: any) => {
-    
+
   return (
     <div className="px-8 py-2 bg-sky-800 flex gap-4 flex-wrap">
       {history.map((item: any, index: number) => (
@@ -22,7 +22,7 @@ const HisotryComponent = ({
           }
           `}
         >
-          {new Date(item.timestamp).toLocaleString()}
+          {new Date(item.timestamp+"Z").toLocaleString()}
         </button>
       ))}
     </div>

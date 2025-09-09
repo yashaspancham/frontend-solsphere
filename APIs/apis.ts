@@ -25,7 +25,7 @@ export const getMachinesByOs = async (osType: string) => {
                 "x-api-key": API_KEY,
             },
         });
-        return res.data; // { osType: "linux", machineIds: ["host1", "host2"] }
+        return res.data;
     } catch (err) {
         console.error("Error fetching machine IDs:", err);
         return null;
@@ -33,7 +33,7 @@ export const getMachinesByOs = async (osType: string) => {
 };
 
 
-// Get machine history (timestamps + checks)
+
 export const getMachineHistory = async (machineId: string) => {
     try {
         const res = await axios.get(`${API_BASE}reports/${machineId}/history`, {

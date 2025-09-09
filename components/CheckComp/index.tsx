@@ -2,11 +2,12 @@
 import React from "react";
 import { timeAgo } from "@/utils";
 const CheckComp = ({ selectedCheck }: any) => {
+    console.log("Selected Check: ", selectedCheck);
   return (
     <div className="p-10 md:p-2 flex max-md:flex-col gap-5 w-full ">
       <div className="bg-gray-200 h-fit p-4 rounded-lg flex flex-col mr-4">
-        {selectedCheck.checks.lastCheckedAt && (
-          <p>LastChange: {timeAgo(selectedCheck.checks.lastCheckedAt)}</p>
+        {selectedCheck.timestamp && (
+          <p>LastChange: {timeAgo(new Date(selectedCheck.timestamp+"Z"))}</p>
         )}
         {selectedCheck.checks.diskEncryption && (
           <p
@@ -23,7 +24,7 @@ const CheckComp = ({ selectedCheck }: any) => {
         {selectedCheck.checks.osUpdates && (
           <p
             className={`p-2 text-white ${
-              selectedCheck.checks.osUpdates.updatesAvailable
+              !selectedCheck.checks.osUpdates.updatesAvailable
                 ? "bg-green-800 "
                 : "bg-red-800 "
             }
