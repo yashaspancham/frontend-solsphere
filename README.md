@@ -1,4 +1,4 @@
-# Solsphere Frontend
+# client utility dashboard Frontend
 
 This is the **frontend** for the Solsphere client utility.  
 It is built with **Next.js** and **Tailwind CSS**.
